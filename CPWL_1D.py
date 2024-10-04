@@ -662,32 +662,6 @@ def optimal_piecewise_linear_approximation_MILP(data, err, K, Slb = 0, crossSeg 
                         else:
                             dictWS[cDec[i][j]] = 0
             model_params = mathopt.ModelSolveParameters(solution_hints=[mathopt.SolutionHint(variable_values=dictWS)])
-            
-
-        # Fixing warm start
-        # if fixWs:
-        #     S = len(wsLinSeg)
-        #     lastSegNber.fixValue() 
-        #     for j in ls:
-        #         if j < S:
-        #             slope[j].fixValue() 
-        #             intercept[j].fixValue() 
-        #             if j>0 and crossSeg=='inBetween':
-        #                 crossDir[j].fixValue() 
-        #             for i in dp:
-        #                 if not(optErrorOnly) or useSegIdx:
-        #                     segNber[i].fixValue() 
-        #                 cDec[i][j].fixValue() 
-        
-        # dummy fix to check warm fixing variables work
-        # if dummyFix:
-        #     for i in dp:
-        #         for j in ls:
-        #             if j==0:
-        #                 cDec[i][j].setInitialValue(1)
-        #             else:
-        #                 cDec[i][j].setInitialValue(0)
-        #             cDec[i][j].fixValue() 
 
         print(f"Number of binary variables: {NberBin}")
         print(f"Number of binary variable fixed: {NberBinFixed}")
