@@ -1,5 +1,9 @@
-# CPWL
-Fitting of Continuous Piecewise Linear (CPWL) functions
+# 1D CPWL
+This python code is an implementation of the LP models, MILP models, and algorithms described in the article
+"Piecewise linear approximation with minimum number of linear segments and minimum error: A fast approach to tighten and warm start the hierarchical mixed integer formulation"
+https://doi.org/10.1016/j.ejor.2023.11.017
+
+The models and algorithm allows for a fast calculation of the optimal continuous piecewise linear (CPWL) approximation of a 2D dataset.
 
 The code requires the Google OR-Tools python libraries and modules: https://pypi.org/project/ortools/
 
