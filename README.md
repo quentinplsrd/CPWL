@@ -1,7 +1,7 @@
 # CPWL
 Fitting of Continuous Piecewise Linear (CPWL) functions
 
-The code requires the package mathopt.
+The code requires the Google OR-Tools python libraries and modules: https://pypi.org/project/ortools/
 
 The LP solver GLOP is open-source and included in mathopt.
 
