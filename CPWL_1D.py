@@ -2,7 +2,7 @@
 """
 Created on Fri Oct  4 15:06:53 2024
 
-@author: quent
+@author: Quentin Ploussard
 """
 
 import numpy as np
