@@ -810,6 +810,11 @@ def fast_MILP(data, err, solverType=mathopt.SolverType.GUROBI, gap=1e-6, p=7):
       
     minErr, data2 = clean_linreg_data(data, p)
     
+    # case where the y-data is constant 
+    # this is trivial and the CPWL approximation has only one flat segment
+    if data2[:,1].min() == data2[:,1].max():
+        return np.array([[data[:,0].min(), data[:,0].max(), 0., data[:,1].max()]])
+    
     dataBounds, dataResc = rescale_piecewise_linear_problem(data2, p)
     xMin = dataBounds[0,0]
     xMax = dataBounds[1,0]
