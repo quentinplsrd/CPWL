@@ -766,7 +766,8 @@ def test_piecewise_linear_approximation(data, LinSeg, p=7, axislim=[], plotGraph
 
         if k>0:
             crossVec[k] = ((ak-LinSeg[k-1,2])*LinSeg[k-1,1] + (bk-LinSeg[k-1,3]))*((ak-LinSeg[k-1,2])*lk + (bk-LinSeg[k-1,3]))
-        errVec[k] = max(abs(ak*data2[segk,0]+bk - data2[segk,1]))
+        if any(segk):
+            errVec[k] = max(abs(ak*data2[segk,0]+bk - data2[segk,1]))
         
         if plotGraph:
             if k==0:
